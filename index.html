@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PSG Software | Engenharia de Software Corporativo</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+color:#0f172a;
+background:white;
+}
+
+/* HEADER */
+
+header{
+position:fixed;
+width:100%;
+top:0;
+padding:20px 9%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(2,6,23,.75);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
+
+header h1{
+color:white;
+font-weight:600;
+}
+
+nav a{
+color:#cbd5e1;
+margin-left:28px;
+text-decoration:none;
+font-weight:500;
+transition:.3s;
+}
+
+nav a:hover{
+color:white;
+}
+
+/* HERO */
+
+.hero{
+height:58vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+
+background-image:
+linear-gradient(rgba(2,6,23,.75),rgba(2,6,23,.9)),
+url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f');
+
+background-size:cover;
+background-position:center;
+}
+
+.hero-content{
+max-width:850px;
+}
+
+.hero h2{
+font-size:46px;
+font-weight:700;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:20px;
+opacity:.9;
+}
+
+/* SECTIONS — 20% menores */
+
+section{
+padding:100px 10%;
+}
+
+.section-title{
+font-size:38px;
+margin-bottom:25px;
+font-weight:700;
+}
+
+/* SOBRE */
+
+.sobre-bg{
+background:#f8fafc;
+}
+
+.sobre{
+max-width:850px;
+font-size:19px;
+line-height:1.8;
+}
+
+/* SERVIÇOS */
+
+.services-bg{
+background:linear-gradient(180deg,#eef2f7,#e5eaf1);
+}
+
+.services-grid{
+margin-top:60px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:40px;
+}
+
+.service-card{
+background:white;
+padding:38px;
+border-radius:18px;
+box-shadow:0 20px 50px rgba(0,0,0,.05);
+transition:.35s;
+}
+
+.service-card:hover{
+transform:translateY(-10px);
+box-shadow:0 30px 70px rgba(0,0,0,.1);
+}
+
+.service-card h3{
+margin-bottom:12px;
+font-size:22px;
+}
+
+/* CLIENTES */
+
+.clientes-bg{
+background:#f1f5f9;
+}
+
+.clientes-grid{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:120px;
+margin-top:70px;
+flex-wrap:wrap;
+}
+
+.logo-card img{
+height:65px;
+opacity:.85;
+transition:.25s;
+}
+
+.logo-card img:hover{
+opacity:1;
+transform:scale(1.05);
+}
+
+/* FRASE */
+
+.authority{
+background:linear-gradient(135deg,#020617,#0f172a);
+color:white;
+text-align:center;
+padding:90px 10%;
+}
+
+.authority h2{
+font-size:30px;
+max-width:800px;
+margin:auto;
+}
+
+/* CONTATO — SUPER CONSULTORIA */
+
+.contato{
+background:#f8fafc;
+text-align:center;
+}
+
+.email{
+font-size:26px;
+font-weight:600;
+margin-top:10px;
+color:#0f172a;
+}
+
+/* FOOTER */
+
+footer{
+background:#020617;
+color:#94a3b8;
+text-align:center;
+padding:30px;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:768px){
+
+.hero h2{
+font-size:34px;
+}
+
+section{
+padding:80px 8%;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>PSG Software</h1>
+
+<nav>
+<a href="#sobre">Quem Somos</a>
+<a href="#servicos">Serviços</a>
+<a href="#clientes">Clientes</a>
+<a href="#contato">Contato</a>
+</nav>
+</header>
+
+
+<!-- HERO -->
+
+<div class="hero">
+<div class="hero-content">
+
+<h2>Engenharia de Software para Operações Críticas</h2>
+
+<p>
+Projetamos sistemas robustos, seguros e escaláveis para empresas onde parar não é uma opção.
+</p>
+
+</div>
+</div>
+
+
+<!-- SOBRE -->
+
+<section id="sobre" class="sobre-bg">
+
+<h2 class="section-title">Quem Somos</h2>
+
+<p class="sobre">
+A PSG Software é especializada em engenharia de software corporativo,
+desenvolvendo plataformas de alta complexidade, integrações industriais
+e sistemas críticos para organizações que exigem confiabilidade absoluta.
+</p>
+
+</section>
+
+
+<!-- SERVIÇOS -->
+
+<section id="servicos" class="services-bg">
+
+<h2 class="section-title">Serviços</h2>
+
+<div class="services-grid">
+
+<div class="service-card">
+<h3>Arquitetura de Sistemas</h3>
+<p>Projetos escaláveis com tecnologias modernas e alta resiliência.</p>
+</div>
+
+<div class="service-card">
+<h3>Plataformas Industriais</h3>
+<p>Soluções para mineração, logística e operações críticas.</p>
+</div>
+
+<div class="service-card">
+<h3>Cloud & Integrações</h3>
+<p>Infraestrutura segura com integrações complexas e alta disponibilidade.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CLIENTES -->
+
+<section id="clientes" class="clientes-bg">
+
+<h2 class="section-title" style="text-align:center;">Clientes</h2>
+
+
+<div class="clientes-grid">
+
+<div class="logo-card">
+<img src="logos/jmendes.png">
+</div>
+
+<div class="logo-card">
+<img src="logos/scof.png">
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONTATO — MINIMALISTA -->
+
+<section id="contato" class="contato">
+
+<h2 class="section-title">Contato</h2>
+
+<p class="email">
+psgsoftwareltda@gmail.com
+</p>
+
+</section>
+
+
+<footer>
+© 2026 PSG Software LTDA — Engenharia de Software Corporativo
+</footer>
+
+</body>
+</html>
