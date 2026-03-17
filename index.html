@@ -1,381 +1,381 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>PSG Software | Engenharia de Software Corporativo</title>
+    <title>PSG Software | Engenharia de Software Corporativo</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<style>
+    <style>
+        /* RESET */
 
-/* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Inter',sans-serif;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-html{
-scroll-behavior:smooth;
-}
+        body {
+            color: #0f172a;
+            background: white;
+            overflow-x: hidden;
+        }
 
-body{
-color:#0f172a;
-background:white;
-overflow-x:hidden;
-}
+        /* HEADER */
 
-/* HEADER */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            padding: 18px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(2, 6, 23, .75);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
 
-header{
-position:fixed;
-width:100%;
-top:0;
-padding:18px 6%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-background:rgba(2,6,23,.75);
-backdrop-filter:blur(10px);
-z-index:1000;
-}
+        header h1 {
+            color: white;
+            font-weight: 600;
+            font-size: 20px;
+        }
 
-header h1{
-color:white;
-font-weight:600;
-font-size:20px;
-}
+        /* NAV DESKTOP */
 
-/* NAV DESKTOP */
+        nav {
+            display: flex;
+        }
 
-nav{
-display:flex;
-}
+        nav a {
+            color: #cbd5e1;
+            margin-left: 24px;
+            text-decoration: none;
+            font-weight: 500;
+        }
 
-nav a{
-color:#cbd5e1;
-margin-left:24px;
-text-decoration:none;
-font-weight:500;
-}
+        nav a:hover {
+            color: white;
+        }
 
-nav a:hover{
-color:white;
-}
+        /* MENU MOBILE */
 
-/* MENU MOBILE */
+        .menu-toggle {
+            display: none;
+            font-size: 26px;
+            color: white;
+            cursor: pointer;
+        }
 
-.menu-toggle{
-display:none;
-font-size:26px;
-color:white;
-cursor:pointer;
-}
+        /* HERO */
 
-/* HERO */
+        .hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 120px 20px 80px;
 
-.hero{
-min-height:60vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-color:white;
-padding:120px 20px 80px;
+            background-image:
+                linear-gradient(rgba(2, 6, 23, .75), rgba(2, 6, 23, .9)),
+                url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f');
 
-background-image:
-linear-gradient(rgba(2,6,23,.75),rgba(2,6,23,.9)),
-url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f');
+            background-size: cover;
+            background-position: center;
+        }
 
-background-size:cover;
-background-position:center;
-}
+        .hero-content {
+            max-width: 850px;
+        }
 
-.hero-content{
-max-width:850px;
-}
+        .hero h2 {
+            font-size: clamp(30px, 5vw, 46px);
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
 
-.hero h2{
-font-size:clamp(30px,5vw,46px);
-font-weight:700;
-margin-bottom:12px;
-}
+        .hero p {
+            font-size: clamp(16px, 2.5vw, 20px);
+            opacity: .9;
+        }
 
-.hero p{
-font-size:clamp(16px,2.5vw,20px);
-opacity:.9;
-}
+        /* SECTIONS */
 
-/* SECTIONS */
+        section {
+            padding: 90px 6%;
+        }
 
-section{
-padding:90px 6%;
-}
+        .section-title {
+            font-size: clamp(26px, 4vw, 38px);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
 
-.section-title{
-font-size:clamp(26px,4vw,38px);
-margin-bottom:20px;
-font-weight:700;
-}
+        /* SOBRE */
 
-/* SOBRE */
+        .sobre-bg {
+            background: #f8fafc;
+        }
 
-.sobre-bg{
-background:#f8fafc;
-}
+        .sobre {
+            max-width: 800px;
+            font-size: clamp(16px, 2vw, 19px);
+            line-height: 1.7;
+        }
 
-.sobre{
-max-width:800px;
-font-size:clamp(16px,2vw,19px);
-line-height:1.7;
-}
+        /* SERVIÇOS */
 
-/* SERVIÇOS */
+        .services-bg {
+            background: linear-gradient(180deg, #eef2f7, #e5eaf1);
+        }
 
-.services-bg{
-background:linear-gradient(180deg,#eef2f7,#e5eaf1);
-}
+        .services-grid {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 28px;
+        }
 
-.services-grid{
-margin-top:40px;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:28px;
-}
+        .service-card {
+            background: white;
+            padding: 28px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .05);
+            transition: .3s;
+        }
 
-.service-card{
-background:white;
-padding:28px;
-border-radius:16px;
-box-shadow:0 10px 30px rgba(0,0,0,.05);
-transition:.3s;
-}
+        .service-card:hover {
+            transform: translateY(-6px);
+        }
 
-.service-card:hover{
-transform:translateY(-6px);
-}
+        /* CLIENTES */
 
-/* CLIENTES */
+        .clientes-bg {
+            background: #f1f5f9;
+        }
 
-.clientes-bg{
-background:#f1f5f9;
-}
+        .clientes-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 80px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
 
-.clientes-grid{
-display:flex;
-justify-content:center;
-align-items:center;
-gap:80px;
-margin-top:40px;
-flex-wrap:wrap;
-}
+        .logo-card img {
+            height: 55px;
+            max-width: 150px;
+            object-fit: contain;
+            opacity: .85;
+            transition: .25s;
+        }
 
-.logo-card img{
-height:55px;
-max-width:150px;
-object-fit:contain;
-opacity:.85;
-transition:.25s;
-}
+        .logo-card img:hover {
+            opacity: 1;
+            transform: scale(1.05);
+        }
 
-.logo-card img:hover{
-opacity:1;
-transform:scale(1.05);
-}
+        /* CONTATO */
 
-/* CONTATO */
+        .contato {
+            background: #f8fafc;
+            text-align: center;
+        }
 
-.contato{
-background:#f8fafc;
-text-align:center;
-}
+        .email {
+            font-size: clamp(18px, 3vw, 26px);
+            font-weight: 600;
+            margin-top: 10px;
+        }
 
-.email{
-font-size:clamp(18px,3vw,26px);
-font-weight:600;
-margin-top:10px;
-}
+        /* FOOTER */
 
-/* FOOTER */
+        footer {
+            background: #020617;
+            color: #94a3b8;
+            text-align: center;
+            padding: 25px;
+            font-size: 14px;
+        }
 
-footer{
-background:#020617;
-color:#94a3b8;
-text-align:center;
-padding:25px;
-font-size:14px;
-}
+        /* MOBILE */
 
-/* MOBILE */
+        @media(max-width:768px) {
 
-@media(max-width:768px){
+            .menu-toggle {
+                display: block;
+            }
 
-.menu-toggle{
-display:block;
-}
+            nav {
+                position: absolute;
+                top: 65px;
+                right: 0;
+                background: #020617;
+                flex-direction: column;
+                width: 220px;
+                padding: 20px;
+                display: none;
+            }
 
-nav{
-position:absolute;
-top:65px;
-right:0;
-background:#020617;
-flex-direction:column;
-width:220px;
-padding:20px;
-display:none;
-}
+            nav a {
+                margin: 12px 0;
+            }
 
-nav a{
-margin:12px 0;
-}
+            nav.active {
+                display: flex;
+            }
 
-nav.active{
-display:flex;
-}
+            .hero {
+                padding-top: 140px;
+            }
 
-.hero{
-padding-top:140px;
-}
+            .clientes-grid {
+                gap: 40px;
+            }
 
-.clientes-grid{
-gap:40px;
-}
+            .logo-card img {
+                height: 45px;
+            }
 
-.logo-card img{
-height:45px;
-}
-
-}
-
-</style>
+        }
+    </style>
 </head>
 
 <body>
 
-<header>
+    <header>
 
-<h1>PSG Software</h1>
+        <h1>PSG Software</h1>
 
-<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
-<nav id="nav">
-<a href="#sobre">Quem Somos</a>
-<a href="#servicos">Serviços</a>
-<a href="#clientes">Clientes</a>
-<a href="#contato">Contato</a>
-</nav>
+        <nav id="nav">
+            <a href="#sobre">Quem Somos</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#clientes">Clientes</a>
+            <a href="#contato">Contato</a>
+        </nav>
 
-</header>
-
-
-<!-- HERO -->
-
-<div class="hero">
-<div class="hero-content">
-
-<h2>Engenharia de Software para Operações Críticas</h2>
-
-<p>
-Projetamos sistemas robustos, seguros e escaláveis para empresas onde parar não é uma opção.
-</p>
-
-</div>
-</div>
+    </header>
 
 
-<!-- SOBRE -->
+    <!-- HERO -->
 
-<section id="sobre" class="sobre-bg">
+    <div class="hero">
+        <div class="hero-content">
 
-<h2 class="section-title">Quem Somos</h2>
+            <h2>Engenharia de Software para Operações Críticas</h2>
 
-<p class="sobre">
-A PSG Software é especializada em engenharia de software corporativo,
-desenvolvendo plataformas de alta complexidade e sistemas críticos para organizações
-que exigem confiabilidade absoluta.
-</p>
+            <p>
+                Projetamos sistemas robustos, seguros e escaláveis para empresas onde parar não é uma opção.
+            </p>
 
-</section>
-
-
-<!-- SERVIÇOS -->
-
-<section id="servicos" class="services-bg">
-
-<h2 class="section-title">Serviços</h2>
-
-<div class="services-grid">
-
-<div class="service-card">
-<h3>Arquitetura de Sistemas</h3>
-<p>Projetos escaláveis com tecnologias modernas e alta resiliência.</p>
-</div>
-
-<div class="service-card">
-<h3>Plataformas Industriais</h3>
-<p>Soluções para mineração, logística e operações críticas.</p>
-</div>
-
-<div class="service-card">
-<h3>Cloud & Integrações</h3>
-<p>Infraestrutura segura com integrações complexas e alta disponibilidade.</p>
-</div>
-
-</div>
-
-</section>
+        </div>
+    </div>
 
 
-<!-- CLIENTES -->
+    <!-- SOBRE -->
 
-<section id="clientes" class="clientes-bg">
+    <section id="sobre" class="sobre-bg">
 
-<h2 class="section-title" style="text-align:center;">Clientes</h2>
+        <h2 class="section-title">Quem Somos</h2>
 
-<div class="clientes-grid">
+        <p class="sobre">
+            A PSG Software é especializada em engenharia de software corporativo,
+            desenvolvendo plataformas de alta complexidade e sistemas críticos para organizações
+            que exigem confiabilidade absoluta.
+        </p>
 
-<div class="logo-card">
-<img src="logos/jmendes.png">
-</div>
-
-<div class="logo-card">
-<img src="logos/scof.png">
-</div>
-
-</div>
-
-</section>
+    </section>
 
 
-<!-- CONTATO -->
+    <!-- SERVIÇOS -->
 
-<section id="contato" class="contato">
+    <section id="servicos" class="services-bg">
 
-<h2 class="section-title">Contato</h2>
+        <h2 class="section-title">Serviços</h2>
 
-<p class="email">
-psgsoftwareltda@gmail.com
-</p>
+        <div class="services-grid">
 
-</section>
+            <div class="service-card">
+                <h3>Arquitetura de Sistemas</h3>
+                <p>Projetos escaláveis com tecnologias modernas e alta resiliência.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Plataformas Industriais</h3>
+                <p>Soluções para mineração, logística e operações críticas.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Cloud & Integrações</h3>
+                <p>Infraestrutura segura com integrações complexas e alta disponibilidade.</p>
+            </div>
+
+        </div>
+
+    </section>
 
 
-<footer>
-© 2026 PSG Software LTDA — Engenharia de Software Corporativo
-</footer>
+    <!-- CLIENTES -->
+
+    <section id="clientes" class="clientes-bg">
+
+        <h2 class="section-title" style="text-align:center;">Clientes</h2>
+
+        <div class="clientes-grid">
+
+            <div class="logo-card">
+                <img src="logos/jmendes.png">
+            </div>
+
+            <div class="logo-card">
+                <img src="logos/scof.png">
+            </div>
+
+        </div>
+
+    </section>
 
 
-<script>
+    <!-- CONTATO -->
 
-function toggleMenu(){
-document.getElementById("nav").classList.toggle("active");
-}
+    <section id="contato" class="contato">
 
-</script>
+        <h2 class="section-title">Contato</h2>
+
+        <p class="email">
+            psgsoftwareltda@gmail.com
+        </p>
+
+    </section>
+
+
+    <footer>
+        © 2026 PSG Software LTDA — Engenharia de Software Corporativo
+    </footer>
+
+
+    <script>
+
+        function toggleMenu() {
+            document.getElementById("nav").classList.toggle("active");
+        }
+
+    </script>
 
 </body>
+
 </html>
